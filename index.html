@@ -180,6 +180,52 @@
       box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.3);
     }
 
+    .cloud-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      border-radius: var(--radius-full);
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border: 1px solid #bfdbfe;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+
+    .cloud-status-badge .cloud-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .cloud-status-badge.synced {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #a7f3d0;
+    }
+
+    .cloud-status-badge.synced .cloud-dot {
+      background: #10b981;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+    }
+
+    .cloud-status-badge.local {
+      background: #fffbeb;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+
+    .cloud-status-badge.local .cloud-dot {
+      background: #f59e0b;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25);
+    }
+
     /* =========================================
        SCROLLABLE TAB CONTENT AREA
        ========================================= */
@@ -753,6 +799,227 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* =========================================
+       PENGATURAN DURASI KUSTOM TIMER (KETIK & TAMBAH)
+       ========================================= */
+    .custom-timer-container {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 12px 14px;
+      margin-bottom: 22px;
+      text-align: left;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .custom-timer-container:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .custom-timer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .custom-timer-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .custom-timer-title svg {
+      color: var(--primary);
+    }
+
+    .custom-timer-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(251, 146, 60, 0.25);
+    }
+
+    .custom-timer-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .custom-input-box {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .custom-minutes-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 46px 0 13px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: #ffffff;
+      outline: none;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      -moz-appearance: textfield;
+    }
+
+    .custom-minutes-input::-webkit-outer-spin-button,
+    .custom-minutes-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .custom-minutes-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    .custom-input-suffix {
+      position: absolute;
+      right: 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .btn-custom-action {
+      height: 42px;
+      padding: 0 13px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: none;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .btn-custom-apply {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1.5px solid rgba(251, 146, 60, 0.35);
+    }
+
+    .btn-custom-apply:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(251, 146, 60, 0.25);
+    }
+
+    .btn-custom-apply:active {
+      transform: scale(0.96);
+    }
+
+    .btn-custom-add {
+      background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-custom-add:hover {
+      box-shadow: 0 5px 14px rgba(234, 88, 12, 0.35);
+      filter: brightness(1.05);
+    }
+
+    .btn-custom-add:active {
+      transform: scale(0.96);
+    }
+
+    .custom-quick-pills {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .quick-preset-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-right: 2px;
+    }
+
+    .quick-pill {
+      height: 28px;
+      padding: 0 9px;
+      border-radius: var(--radius-full);
+      font-size: 0.74rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .quick-pill:active {
+      transform: scale(0.94);
+    }
+
+    .quick-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(251, 146, 60, 0.3);
+    }
+
+    .quick-pill-divider {
+      width: 1px;
+      height: 18px;
+      background: var(--border-color);
+      margin: 0 2px;
+    }
+
+    .quick-pill.add-pill {
+      background: var(--bg-app);
+      color: var(--accent-teal);
+      border-color: #cbd5e1;
+      font-weight: 800;
+    }
+
+    .quick-pill.add-pill:hover {
+      background: var(--accent-teal-light);
+      border-color: var(--accent-teal);
+      color: var(--accent-teal);
+    }
+
     /* Tampilan Waktu Besar: Lingkaran Penunjuk Waktu Hitung Mundur */
     .timer-ring-wrapper {
       position: relative;
@@ -793,12 +1060,20 @@
     }
 
     .timer-time {
-      font-size: 3.4rem;
+      font-size: clamp(2.4rem, 8vw, 3.4rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--text-main);
       font-variant-numeric: tabular-nums;
       line-height: 1;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+      user-select: none;
+    }
+
+    .timer-time:hover {
+      transform: scale(1.04);
+      color: var(--primary-dark);
     }
 
     .timer-label {
@@ -1364,9 +1639,15 @@
           <span class="brand-subtitle">Ruang Kerja Mobile</span>
         </div>
       </div>
-      <div class="header-badge" id="headerDateBadge">
-        <span class="dot"></span>
-        <span id="headerTodayText">Hari ini</span>
+      <div style="display: flex; align-items: center; gap: 7px;">
+        <div class="cloud-status-badge" id="cloudStatusBadge" title="Status Sinkronisasi Firebase Cloud">
+          <span class="cloud-dot"></span>
+          <span id="cloudStatusText">Firebase</span>
+        </div>
+        <div class="header-badge" id="headerDateBadge">
+          <span class="dot"></span>
+          <span id="headerTodayText">Hari ini</span>
+        </div>
       </div>
     </header>
 
@@ -1455,8 +1736,55 @@
         <div class="focus-card">
           <!-- Pilihan Mode Sesi: Fokus Belajar 25 Menit & Istirahat Santai 5 Menit -->
           <div class="mode-switcher">
-            <button class="mode-btn active" data-time="1500" data-mode="fokus">Fokus Belajar 25 Menit</button>
-            <button class="mode-btn" data-time="300" data-mode="santai">Istirahat Santai 5 Menit</button>
+            <button class="mode-btn active" data-time="1500" data-mode="fokus" id="btnModeFokus">Fokus Belajar 25 Menit</button>
+            <button class="mode-btn" data-time="300" data-mode="santai" id="btnModeSantai">Istirahat Santai 5 Menit</button>
+          </div>
+
+          <!-- Pengaturan Durasi Kustom: Ketik & Tambah / Atur -->
+          <div class="custom-timer-container">
+            <div class="custom-timer-header">
+              <span class="custom-timer-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Atur Durasi Fokus
+              </span>
+              <span class="custom-timer-badge" id="customTimerBadge">Ketik &amp; Tambah</span>
+            </div>
+
+            <div class="custom-timer-input-row">
+              <div class="custom-input-box">
+                <input type="number" id="customMinutesInput" class="custom-minutes-input" min="1" max="360" placeholder="25" value="25" inputmode="numeric" aria-label="Jumlah menit timer fokus">
+                <span class="custom-input-suffix">menit</span>
+              </div>
+              <button type="button" id="btnApplyCustomTimer" class="btn-custom-action btn-custom-apply" title="Atur durasi timer ke nilai yang diketik">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Atur</span>
+              </button>
+              <button type="button" id="btnAddCustomTimer" class="btn-custom-action btn-custom-add" title="Tambahkan menit yang diketik ke timer saat ini">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>+ Tambah</span>
+              </button>
+            </div>
+
+            <!-- Preset Cepat untuk Kemudahan Mengetik & Menambah Waktu -->
+            <div class="custom-quick-pills">
+              <span class="quick-preset-label">Preset:</span>
+              <button type="button" class="quick-pill set-pill" data-minutes="15" title="Atur 15 menit">15m</button>
+              <button type="button" class="quick-pill set-pill active" data-minutes="25" title="Atur 25 menit">25m</button>
+              <button type="button" class="quick-pill set-pill" data-minutes="30" title="Atur 30 menit">30m</button>
+              <button type="button" class="quick-pill set-pill" data-minutes="45" title="Atur 45 menit">45m</button>
+              <button type="button" class="quick-pill set-pill" data-minutes="60" title="Atur 60 menit">60m</button>
+              <div class="quick-pill-divider"></div>
+              <button type="button" class="quick-pill add-pill" data-add="5" title="Tambah 5 menit ke timer">+5m</button>
+              <button type="button" class="quick-pill add-pill" data-add="10" title="Tambah 10 menit ke timer">+10m</button>
+            </div>
           </div>
 
           <!-- Tampilan Waktu Besar: Lingkaran Penunjuk Waktu Hitung Mundur -->
@@ -1658,16 +1986,239 @@
   </div>
 
   <!-- =========================================
-       JAVASCRIPT LOGIC
+       JAVASCRIPT LOGIC (FIREBASE CONNECTED)
        ========================================= -->
-  <script>
+  <script type="module">
+    // Import SDK modular Firebase dari CDN Google resmi
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { 
+      getFirestore, 
+      collection, 
+      doc, 
+      setDoc, 
+      deleteDoc, 
+      onSnapshot 
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // Konfigurasi Firebase Web App Anda
+    const firebaseConfig = {
+      apiKey: "AIzaSyC7gP1trX5XEu9p0UG9d3zwo6BEGKzkz7U",
+      authDomain: "productivity-hub-456c8.firebaseapp.com",
+      projectId: "productivity-hub-456c8",
+      storageBucket: "productivity-hub-456c8.firebasestorage.app",
+      messagingSenderId: "327427045384",
+      appId: "1:327427045384:web:b0f90cef0e6ee04dba79bd"
+    };
+
+    // Inisialisasi Firebase App & Cloud Firestore
+    let app = null;
+    let db = null;
+    let isFirebaseReady = false;
+
+    try {
+      app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      isFirebaseReady = true;
+      console.log("Firebase App & Firestore berhasil terhubung!");
+    } catch (err) {
+      console.warn("Catatan inisialisasi Firebase:", err);
+    }
+
+    // Pembaruan Indikator Status Cloud di Header
+    function updateCloudStatus(status) {
+      const badge = document.getElementById('cloudStatusBadge');
+      const text = document.getElementById('cloudStatusText');
+      if (!badge || !text) return;
+
+      badge.classList.remove('synced', 'local');
+      if (status === 'synced') {
+        badge.classList.add('synced');
+        text.textContent = 'Cloud Aktif';
+        badge.title = 'Tersinkronisasi dengan Firebase Cloud Firestore';
+      } else if (status === 'local') {
+        badge.classList.add('local');
+        text.textContent = 'Mode Lokal';
+        badge.title = 'Tersimpan lokal di browser (Offline)';
+      } else {
+        text.textContent = 'Sinkronisasi...';
+        badge.title = 'Menghubungkan ke cloud...';
+      }
+    }
+
+    /* =========================================
+       FIREBASE CLOUD FIRESTORE SYNC HELPERS
+       ========================================= */
+    async function syncTaskToFirebase(task) {
+      if (!db) return;
+      try {
+        await setDoc(doc(db, "tasks", String(task.id)), {
+          id: task.id,
+          title: task.title,
+          priority: task.priority || 'Sedang',
+          completed: !!task.completed,
+          createdAt: task.createdAt || Date.now()
+        });
+        updateCloudStatus('synced');
+      } catch (e) {
+        console.warn("Gagal sinkron tugas ke Firebase:", e.message);
+        updateCloudStatus('local');
+      }
+    }
+
+    async function deleteTaskFromFirebase(taskId) {
+      if (!db) return;
+      try {
+        await deleteDoc(doc(db, "tasks", String(taskId)));
+        updateCloudStatus('synced');
+      } catch (e) {
+        console.warn("Gagal hapus tugas di Firebase:", e.message);
+      }
+    }
+
+    async function syncJournalToFirebase(journal) {
+      if (!db) return;
+      try {
+        await setDoc(doc(db, "journals", String(journal.id)), {
+          id: journal.id,
+          date: journal.date,
+          subject: journal.subject,
+          content: journal.content,
+          createdAt: journal.createdAt || Date.now()
+        });
+        updateCloudStatus('synced');
+      } catch (e) {
+        console.warn("Gagal sinkron jurnal ke Firebase:", e.message);
+        updateCloudStatus('local');
+      }
+    }
+
+    async function deleteJournalFromFirebase(journalId) {
+      if (!db) return;
+      try {
+        await deleteDoc(doc(db, "journals", String(journalId)));
+        updateCloudStatus('synced');
+      } catch (e) {
+        console.warn("Gagal hapus jurnal di Firebase:", e.message);
+      }
+    }
+
+    async function syncFocusStatsToFirebase() {
+      if (!db) return;
+      try {
+        await setDoc(doc(db, "stats", "focus"), {
+          totalMinutes: state.focusStats.totalMinutes,
+          completedSessions: state.focusStats.completedSessions,
+          customFocusSeconds: (typeof customFocusSeconds !== 'undefined') ? customFocusSeconds : 1500,
+          updatedAt: Date.now()
+        }, { merge: true });
+        updateCloudStatus('synced');
+      } catch (e) {
+        console.warn("Gagal sinkron statistik fokus ke Firebase:", e.message);
+      }
+    }
+
+    function initFirebaseRealtimeSync() {
+      if (!db) {
+        updateCloudStatus('local');
+        return;
+      }
+
+      updateCloudStatus('syncing');
+
+      // 1. Sinkronisasi Realtime Koleksi Tugas (tasks)
+      try {
+        onSnapshot(collection(db, "tasks"), (snapshot) => {
+          if (!snapshot.empty) {
+            const cloudTasks = [];
+            snapshot.forEach(docSnap => cloudTasks.push(docSnap.data()));
+            cloudTasks.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+            state.tasks = cloudTasks;
+            localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(state.tasks));
+            renderTasks();
+            updateTaskProgress();
+          } else if (state.tasks && state.tasks.length > 0) {
+            // Upload data bawaan awal jika koleksi di Firestore masih kosong
+            state.tasks.forEach(t => syncTaskToFirebase(t));
+          }
+          updateCloudStatus('synced');
+        }, (err) => {
+          console.warn("Listener Firestore tasks:", err.message);
+          updateCloudStatus('local');
+        });
+      } catch (err) {
+        console.warn("Error tasks snapshot:", err);
+        updateCloudStatus('local');
+      }
+
+      // 2. Sinkronisasi Realtime Koleksi Jurnal Refleksi (journals)
+      try {
+        onSnapshot(collection(db, "journals"), (snapshot) => {
+          if (!snapshot.empty) {
+            const cloudJournals = [];
+            snapshot.forEach(docSnap => cloudJournals.push(docSnap.data()));
+            cloudJournals.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+            state.journals = cloudJournals;
+            localStorage.setItem(STORAGE_KEYS.JOURNALS, JSON.stringify(state.journals));
+            renderJournals();
+          } else if (state.journals && state.journals.length > 0) {
+            // Upload data bawaan awal jika Firestore masih kosong
+            state.journals.forEach(j => syncJournalToFirebase(j));
+          }
+          updateCloudStatus('synced');
+        }, (err) => {
+          console.warn("Listener Firestore journals:", err.message);
+          updateCloudStatus('local');
+        });
+      } catch (err) {
+        console.warn("Error journals snapshot:", err);
+      }
+
+      // 3. Sinkronisasi Realtime Dokumen Statistik Fokus (stats/focus)
+      try {
+        onSnapshot(doc(db, "stats", "focus"), (docSnap) => {
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            if (data.totalMinutes !== undefined && data.completedSessions !== undefined) {
+              state.focusStats = {
+                totalMinutes: data.totalMinutes,
+                completedSessions: data.completedSessions
+              };
+              localStorage.setItem(STORAGE_KEYS.FOCUS_STATS, JSON.stringify(state.focusStats));
+              updateFocusStatsDisplay();
+            }
+            if (data.customFocusSeconds && typeof customFocusSeconds !== 'undefined' && data.customFocusSeconds !== customFocusSeconds) {
+              customFocusSeconds = data.customFocusSeconds;
+              localStorage.setItem(STORAGE_KEYS.FOCUS_DURATION, customFocusSeconds.toString());
+              const min = Math.round(customFocusSeconds / 60);
+              const customMinutesInput = document.getElementById('customMinutesInput');
+              const btnModeFokus = document.getElementById('btnModeFokus');
+              if (customMinutesInput) customMinutesInput.value = min;
+              if (btnModeFokus) {
+                btnModeFokus.setAttribute('data-time', customFocusSeconds);
+                btnModeFokus.textContent = `Fokus Belajar ${min} Menit`;
+              }
+              if (typeof updateQuickPillsActive === 'function') updateQuickPillsActive(min);
+            }
+          } else {
+            syncFocusStatsToFirebase();
+          }
+          updateCloudStatus('synced');
+        }, (err) => {
+          console.warn("Listener Firestore focus stats:", err.message);
+        });
+      } catch (err) {
+        console.warn("Error focus stats snapshot:", err);
+      }
+    }
+
     /* =========================================
        APP STATE & STORAGE
        ========================================= */
     const STORAGE_KEYS = {
       TASKS: 'prodhub_tasks_v1',
       FOCUS_STATS: 'prodhub_focus_stats_v1',
-      JOURNALS: 'prodhub_journals_v1'
+      JOURNALS: 'prodhub_journals_v1',
+      FOCUS_DURATION: 'prodhub_focus_duration_v1'
     };
 
     // Default Seed Data
@@ -1719,6 +2270,7 @@
     function saveFocusStats() {
       localStorage.setItem(STORAGE_KEYS.FOCUS_STATS, JSON.stringify(state.focusStats));
       updateFocusStatsDisplay();
+      syncFocusStatsToFirebase();
     }
 
     /* =========================================
@@ -1869,6 +2421,7 @@
 
       state.tasks.unshift(newTask);
       saveTasks(); // Persists to LocalStorage
+      syncTaskToFirebase(newTask); // Sinkronisasi ke Firebase Cloud Firestore
       taskInput.value = '';
       showToast('✅ Tugas baru berhasil ditambahkan');
     }
@@ -1880,6 +2433,7 @@
 
     // Toggle Task Completed (Interaktivitas Centang)
     window.toggleTask = function (id) {
+      let updatedTask = null;
       state.tasks = state.tasks.map(t => {
         if (t.id === id) {
           const nextState = !t.completed;
@@ -1887,17 +2441,22 @@
             playBeep('tick');
             showToast('🎉 Tugas diselesaikan!');
           }
-          return { ...t, completed: nextState };
+          updatedTask = { ...t, completed: nextState };
+          return updatedTask;
         }
         return t;
       });
       saveTasks(); // Persists to LocalStorage
+      if (updatedTask) {
+        syncTaskToFirebase(updatedTask); // Sinkronisasi status selesai ke Firebase
+      }
     };
 
     // Delete Task
     window.deleteTask = function (id) {
       state.tasks = state.tasks.filter(t => t.id !== id);
       saveTasks(); // Persists to LocalStorage
+      deleteTaskFromFirebase(id); // Hapus dokumen dari Firebase
       showToast('🗑️ Tugas dihapus');
     };
 
@@ -1997,12 +2556,24 @@
     const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * 88; // 552.92
     timerProgressCircle.style.strokeDasharray = CIRCLE_CIRCUMFERENCE;
 
+    // Load saved focus duration (default: 25 minutes = 1500 seconds)
+    const savedFocusDuration = parseInt(localStorage.getItem(STORAGE_KEYS.FOCUS_DURATION), 10);
+    let customFocusSeconds = (!isNaN(savedFocusDuration) && savedFocusDuration > 0) ? savedFocusDuration : 1500;
+
     let timerInterval = null;
-    let currentModeSeconds = 1500; // default 25 min
-    let remainingSeconds = 1500;
+    let currentModeSeconds = customFocusSeconds;
+    let remainingSeconds = customFocusSeconds;
     let isRunning = false;
     let currentMode = 'fokus';
     let currentSessionNumber = 1;
+
+    // Custom Timer Elements
+    const customMinutesInput = document.getElementById('customMinutesInput');
+    const btnApplyCustomTimer = document.getElementById('btnApplyCustomTimer');
+    const btnAddCustomTimer = document.getElementById('btnAddCustomTimer');
+    const btnModeFokus = document.getElementById('btnModeFokus');
+    const btnModeSantai = document.getElementById('btnModeSantai');
+    const customTimerBadge = document.getElementById('customTimerBadge');
 
     /* Alarm Audio Native via Web Audio API (Zero external audio files!) */
     function playNativeAlarm() {
@@ -2033,6 +2604,13 @@
     }
 
     function formatTime(sec) {
+      if (sec < 0) sec = 0;
+      if (sec >= 3600) {
+        const h = Math.floor(sec / 3600);
+        const m = Math.floor((sec % 3600) / 60).toString().padStart(2, '0');
+        const s = (sec % 60).toString().padStart(2, '0');
+        return `${h}:${m}:${s}`;
+      }
       const m = Math.floor(sec / 60).toString().padStart(2, '0');
       const s = (sec % 60).toString().padStart(2, '0');
       return `${m}:${s}`;
@@ -2040,9 +2618,130 @@
 
     function updateTimerDisplay() {
       timerClock.textContent = formatTime(remainingSeconds);
-      const fraction = remainingSeconds / currentModeSeconds;
+      const fraction = currentModeSeconds > 0 ? (remainingSeconds / currentModeSeconds) : 0;
       const offset = CIRCLE_CIRCUMFERENCE * (1 - fraction);
       timerProgressCircle.style.strokeDashoffset = offset;
+    }
+
+    function updateQuickPillsActive(minutes) {
+      document.querySelectorAll('.quick-pill.set-pill').forEach(pill => {
+        const pillMin = parseInt(pill.getAttribute('data-minutes'), 10);
+        if (pillMin === minutes) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+    }
+
+    /* Mengubah durasi total timer fokus dari input ketik atau preset */
+    function applyCustomTimer(customMinutes) {
+      let minutesToSet;
+      if (customMinutes !== undefined && customMinutes !== null) {
+        minutesToSet = parseInt(customMinutes, 10);
+      } else if (customMinutesInput) {
+        minutesToSet = parseInt(customMinutesInput.value, 10);
+      } else {
+        minutesToSet = 25;
+      }
+
+      if (isNaN(minutesToSet) || minutesToSet <= 0) {
+        showToast('⚠️ Masukkan durasi yang valid (minimal 1 menit)');
+        if (customMinutesInput) customMinutesInput.focus();
+        return;
+      }
+      if (minutesToSet > 360) {
+        showToast('⚠️ Durasi maksimal adalah 360 menit (6 jam)');
+        return;
+      }
+
+      const newSeconds = minutesToSet * 60;
+      customFocusSeconds = newSeconds;
+      localStorage.setItem(STORAGE_KEYS.FOCUS_DURATION, customFocusSeconds.toString());
+      syncFocusStatsToFirebase(); // Sinkronisasi durasi kustom ke Firebase
+
+      if (customMinutesInput) {
+        customMinutesInput.value = minutesToSet;
+      }
+
+      // Perbarui tombol tab mode fokus
+      if (btnModeFokus) {
+        btnModeFokus.setAttribute('data-time', customFocusSeconds);
+        btnModeFokus.textContent = `Fokus Belajar ${minutesToSet} Menit`;
+      }
+
+      updateQuickPillsActive(minutesToSet);
+
+      // Selalu aktifkan mode fokus jika pengguna mengatur timer fokus
+      currentMode = 'fokus';
+      modeButtons.forEach(btn => {
+        if (btn.getAttribute('data-mode') === 'fokus') {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      timerProgressCircle.style.stroke = 'var(--primary)';
+
+      pauseTimer();
+      currentModeSeconds = newSeconds;
+      remainingSeconds = newSeconds;
+      btnTimerText.textContent = 'Mulai';
+      timerStatusLabel.textContent = 'SIAP FOKUS';
+      updateTimerDisplay();
+
+      playBeep('success');
+      showToast(`⏱️ Durasi fokus diubah menjadi ${minutesToSet} menit!`);
+    }
+
+    /* Menambahkan durasi ke timer yang sedang ada (countdown diperpanjang) */
+    function addCustomTimer(minutesToAdd) {
+      let addMin;
+      if (minutesToAdd !== undefined && minutesToAdd !== null) {
+        addMin = parseInt(minutesToAdd, 10);
+      } else if (customMinutesInput) {
+        addMin = parseInt(customMinutesInput.value, 10);
+      } else {
+        addMin = 5;
+      }
+
+      if (isNaN(addMin) || addMin <= 0) {
+        showToast('⚠️ Masukkan jumlah menit yang ingin ditambahkan');
+        if (customMinutesInput) customMinutesInput.focus();
+        return;
+      }
+      if (addMin > 180) {
+        showToast('⚠️ Maksimal penambahan waktu adalah 180 menit');
+        return;
+      }
+
+      const additionalSeconds = addMin * 60;
+      remainingSeconds += additionalSeconds;
+
+      // Sesuaikan currentModeSeconds agar progress lingkaran SVG tetap proporsional
+      if (remainingSeconds > currentModeSeconds) {
+        currentModeSeconds = remainingSeconds;
+      }
+
+      // Jika dalam mode fokus, perbarui juga preferensi durasi fokus
+      if (currentMode === 'fokus') {
+        customFocusSeconds = currentModeSeconds;
+        localStorage.setItem(STORAGE_KEYS.FOCUS_DURATION, customFocusSeconds.toString());
+        syncFocusStatsToFirebase(); // Sinkronisasi penambahan waktu ke Firebase
+        const totalMinutes = Math.round(customFocusSeconds / 60);
+        if (customMinutesInput) {
+          customMinutesInput.value = totalMinutes;
+        }
+        if (btnModeFokus) {
+          btnModeFokus.setAttribute('data-time', customFocusSeconds);
+          btnModeFokus.textContent = `Fokus Belajar ${totalMinutes} Menit`;
+        }
+        updateQuickPillsActive(totalMinutes);
+      }
+
+      updateTimerDisplay();
+      playBeep('tick');
+      showToast(`➕ Ditambahkan +${addMin} menit ke timer!`);
     }
 
     function toggleTimer() {
@@ -2084,7 +2783,7 @@
       pauseTimer();
       remainingSeconds = currentModeSeconds;
       btnTimerText.textContent = 'Mulai';
-      timerStatusLabel.textContent = 'SIAP FOKUS';
+      timerStatusLabel.textContent = currentMode === 'fokus' ? 'SIAP FOKUS' : 'ISTIRAHAT SANTAI';
       updateTimerDisplay();
       showToast('🔄 Timer diatur ulang');
     }
@@ -2109,7 +2808,7 @@
         showToast('⏰ Waktu istirahat selesai! Siap kembali fokus belajar? 🎯');
         currentSessionNumber++;
         currentSessionLabel.textContent = `Sesi #${currentSessionNumber}`;
-        switchMode(1500, 'fokus');
+        switchMode(customFocusSeconds, 'fokus');
       }
     }
 
@@ -2129,9 +2828,11 @@
       if (modeName === 'fokus') {
         timerProgressCircle.style.stroke = 'var(--primary)';
         timerStatusLabel.textContent = 'SIAP FOKUS';
+        if (customTimerBadge) customTimerBadge.textContent = 'Mode Fokus';
       } else {
         timerProgressCircle.style.stroke = 'var(--accent-teal)';
         timerStatusLabel.textContent = 'ISTIRAHAT SANTAI';
+        if (customTimerBadge) customTimerBadge.textContent = 'Mode Istirahat';
       }
 
       pauseTimer();
@@ -2150,6 +2851,54 @@
 
     btnToggleTimer.addEventListener('click', toggleTimer);
     btnResetTimer.addEventListener('click', resetTimer);
+
+    // Event listener untuk tombol kustom waktu
+    if (btnApplyCustomTimer) {
+      btnApplyCustomTimer.addEventListener('click', () => {
+        applyCustomTimer();
+      });
+    }
+
+    if (btnAddCustomTimer) {
+      btnAddCustomTimer.addEventListener('click', () => {
+        addCustomTimer();
+      });
+    }
+
+    if (customMinutesInput) {
+      customMinutesInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyCustomTimer();
+        }
+      });
+    }
+
+    // Quick presets click listeners
+    document.querySelectorAll('.quick-pill.set-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const min = parseInt(pill.getAttribute('data-minutes'), 10);
+        applyCustomTimer(min);
+      });
+    });
+
+    document.querySelectorAll('.quick-pill.add-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const addMin = parseInt(pill.getAttribute('data-add'), 10);
+        addCustomTimer(addMin);
+      });
+    });
+
+    // Klik langsung pada teks jam untuk fokus ke input durasi
+    if (timerClock) {
+      timerClock.title = 'Klik untuk mengetik durasi waktu fokus';
+      timerClock.addEventListener('click', () => {
+        if (customMinutesInput) {
+          customMinutesInput.focus();
+          customMinutesInput.select();
+        }
+      });
+    }
 
     // Ajakan Refleksi Modal Event Handlers
     if (btnGoToJournal) {
@@ -2231,9 +2980,10 @@
       // Simpan di posisi paling atas (terbaru)
       state.journals.unshift(newJournal);
       saveJournals(); // Persists ke LocalStorage browser
+      syncJournalToFirebase(newJournal); // Sinkronisasi ke Firebase Firestore
 
       journalContent.value = '';
-      showToast('📖 Catatan refleksi berhasil disimpan ke LocalStorage!');
+      showToast('📖 Catatan refleksi berhasil disimpan ke Cloud & Lokal!');
     }
 
     if (btnSaveJournal) {
@@ -2244,6 +2994,7 @@
     window.deleteJournal = function (id) {
       state.journals = state.journals.filter(j => j.id !== id);
       saveJournals(); // Persists ke LocalStorage browser
+      deleteJournalFromFirebase(id); // Hapus dari Firebase Firestore
       showToast('🗑️ Catatan refleksi dihapus');
     };
 
@@ -2290,7 +3041,7 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                Tersimpan di LocalStorage
+                Tersimpan di Cloud &amp; Lokal
               </span>
               <button type="button" class="btn-delete-journal" onclick="deleteJournal(${j.id})" title="Hapus catatan riwayat">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2323,13 +3074,32 @@
       updateJournalAutoDate();
       renderTasks();
       updateTaskProgress();
+
+      // Sinkronkan pengaturan durasi fokus kustom
+      const currentFocusMin = Math.round(customFocusSeconds / 60);
+      if (customMinutesInput) {
+        customMinutesInput.value = currentFocusMin;
+      }
+      if (btnModeFokus) {
+        btnModeFokus.setAttribute('data-time', customFocusSeconds);
+        btnModeFokus.textContent = `Fokus Belajar ${currentFocusMin} Menit`;
+      }
+      updateQuickPillsActive(currentFocusMin);
+
       updateTimerDisplay();
       updateFocusStatsDisplay();
       renderJournals();
+
+      // Inisialisasi sinkronisasi realtime Firebase Cloud Firestore
+      initFirebaseRealtimeSync();
     }
 
-    // Run on loaded
-    document.addEventListener('DOMContentLoaded', init);
+    // Jalankan inisialisasi aplikasi
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
   </script>
 </body>
 
